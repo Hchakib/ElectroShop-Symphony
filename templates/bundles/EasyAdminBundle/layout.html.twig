@@ -1,0 +1,10 @@
+{# templates/bundles/EasyAdminBundle/layout.html.twig #}
+{% extends '@!EasyAdmin/layout.html.twig' %}
+
+{# Le bloc `brand` est celui qui affiche le titre/nom de l'app dans la navbar #}
+{% block brand %}
+    <a class="navbar-brand text-decoration-none" href="{{ path('home') }}">
+        {# Tu peux y mettre un logo ou juste du texte #}
+        <i class="fas fa-store"></i> Ma Boutique
+    </a>
+{% endblock %}

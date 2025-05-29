@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon profil{% endblock %}
+
+{% block body %}
+    <h2>Mon profil</h2>
+
+    {{ form(form) }}
+
+    {# Affichage des messages d’erreur ou de succès #}
+    {% for type in ['error', 'success'] %}
+        {% for msg in app.flashes(type) %}
+            <div class="alert alert-{{ type == 'error' ? 'danger' : 'success' }}">
+                {{ msg }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    <a href="{{ path('account') }}" class="btn btn-link">Retour à mon espace</a>
+{% endblock %}

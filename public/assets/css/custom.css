@@ -1,0 +1,103 @@
+/* Fond dégradé, ombre portée */
+.navbar {
+    background: linear-gradient(135deg, #343a40 0%, #212529 100%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo : plus gros, couleur accentuée */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffc107 !important;
+}
+
+/* Espacement entre les items */
+.navbar-nav .nav-item {
+    margin-left: 1rem;
+}
+
+/* Liens : transition & hover */
+.navbar-nav .nav-link {
+    padding: 0.5rem 0.75rem;
+    transition: color 0.2s, background 0.2s;
+}
+.navbar-nav .nav-link:hover {
+    color: #ffc107 !important;
+    background: rgba(255, 193, 7, 0.1);
+    border-radius: 0.25rem;
+}
+
+/* Bouton toggler : bordure claire */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Icône toggler plus visible */
+.navbar-toggler-icon {
+    filter: invert(1) brightness(1.2);
+}
+
+/* Active state : souligné */
+.navbar-nav .nav-item.active .nav-link {
+    position: relative;
+}
+.navbar-nav .nav-item.active .nav-link::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #ffc107;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* Panier : badge rond pour le nombre */
+.navbar-nav .nav-link .badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    font-size: 0.65rem;
+    background: #dc3545;
+}
+/* Footer basique en ligne */
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    margin: 0;
+    background-color: #212529; /* foncé */
+    border-top: 1px solid #343a40;
+}
+
+footer ul li small {
+    font-size: 0.85rem;
+    color: #adb5bd; /* gris clair */
+}
+
+footer ul li a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+footer ul li a:hover {
+    color: #ffc107; /* accent doré */
+    text-decoration: underline;
+}
+
+/* Optionnel : « Retour haut de page » si utilisé */
+footer ul li .back-to-top {
+    cursor: pointer;
+    color: #adb5bd;
+    transition: color 0.2s;
+}
+
+footer ul li .back-to-top:hover {
+    color: #ffc107;
+}

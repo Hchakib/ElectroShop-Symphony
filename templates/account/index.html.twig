@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte — La Boot'Ique{% endblock %}
+
+{% block body %}
+    <div class="container py-5">
+        <div class="row gx-4">
+            {# Sidebar navigation #}
+            <aside class="col-md-3 mb-4">
+                <div class="list-group shadow">
+        <span class="list-group-item list-group-item-action active bg-dark text-white">
+          <i class="bi bi-person-circle me-2"></i>Mon compte
+        </span>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('admin') }}" class="list-group-item list-group-item-action">
+                            <i class="bi bi-speedometer2 me-2"></i>Back office
+                        </a>
+                    {% endif %}
+                    <a href="{{ path('account_orders') }}" class="list-group-item list-group-item-action">
+                        <i class="bi bi-basket3 me-2"></i>Mes commandes
+                    </a>
+                    <a href="{{ path('account_profile') }}" class="list-group-item list-group-item-action">
+                        <i class="bi bi-pencil-square me-2"></i>Modifier mon profil
+                    </a>
+                </div>
+            </aside>
+
+            {# Main content #}
+            <main class="col-md-9">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="card-title mb-3">Bonjour {{ app.user.firstname }} !</h2>
+                        <p class="card-text mb-4">
+                            Bienvenue dans votre espace membre. Depuis ici, vous pouvez consulter vos commandes passées,
+                            mettre à jour vos informations personnelles et accéder à votre back-office si vous êtes administrateur.
+                        </p>
+
+                        {% for message in app.flashes('notice') %}
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+{% endblock %}

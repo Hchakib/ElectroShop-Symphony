@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{# Utilisation du thème Bootstrap 5 pour l’affichage du formulaire #}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+{% block title %}Nous contacter — La Boot'Ique{% endblock %}
+
+{% block body %}
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-dark text-white">
+                        <h3 class="mb-0">Envoyez-nous votre message</h3>
+                    </div>
+                    <div class="card-body">
+                        {{ form(form) }}
+                        {% for message in app.flashes('notice') %}
+                            <div class="alert alert-success mt-3">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon récapitulatif - La Boot'Ique{% endblock %}
+
+{% block body %}
+    <h2>Mon récapitulatif</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <strong class="summary-label">Vos articles</strong>
+            <div class="cart-summary">
+                {% for item in cart.products %}
+                    <div class="row mb-2">
+                        <div class="col-2 my-auto">
+                            <img src="/uploads/{{ item.product.image }}" alt="{{ item.product.name }}" height="50">
+                        </div>
+                        <div class="col-8 my-auto">
+                            {{ item.product.name }}
+                        </div>
+                        <div class="col-2 my-auto">
+                            x{{ item.quantity }}
+                        </div>
+                    </div>
+                {% endfor %}
+                <hr>
+                <div class="row">
+                    <div class="col-9 font-weight-bold">Total</div>
+                    <div class="col-3 font-weight-bold">
+                        {{ (totalPrice / 100)|number_format(2, ',', '.') }} €
+                    </div>
+                </div>
+            </div>
+
+            <a href="{{ path('checkout', { reference: order.reference }) }}"
+               class="btn btn-outline-success btn-block mt-4">
+                <i class="bi bi-credit-card-2-back"></i> Payer
+            </a>
+        </div>
+    </div>
+{% endblock %}

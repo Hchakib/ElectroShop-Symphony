@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}À propos | La Boot'Ique{% endblock %}
+
+{% block body %}
+    <div class="container my-5">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img
+                        src="{{ asset('img/tech-banner.jpg') }}"
+                        alt="Gadgets technologiques"
+                        class="img-fluid rounded shadow-sm"
+                >
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-4">Bienvenue chez La ElectroShop</h1>
+                <p class="lead">
+                    La Boot'Ique est votre destination en ligne pour les derniers gadgets et accessoires technologiques.
+                    Nous sélectionnons avec rigueur des produits innovants pour enrichir votre quotidien numérique et vous
+                    faire profiter du meilleur de la tech.
+                </p>
+            </div>
+        </div>
+
+        <section class="mb-5">
+            <h2>Notre mission</h2>
+            <p>
+                Notre vocation est simple : rendre la technologie accessible à tous. Que vous soyez un passionné
+                d’informatique, un créatif à la recherche d’outils performants, ou simplement curieux des innovations
+                high-tech, La Boot'Ique vous offre une sélection pointue d’objets connectés, d’accessoires audio,
+                de périphériques et bien plus encore.
+            </p>
+        </section>
+
+        <section class="mb-5">
+            <h2>Nos produits</h2>
+            <p>
+                Des derniers smartphones aux montres connectées, en passant par les drones et enceintes intelligentes,
+                chaque article de notre catalogue est testé en interne pour garantir performance, fiabilité et design.
+                Nous collaborons avec des marques de référence afin de vous proposer des produits à la pointe des
+                tendances technologiques.
+            </p>
+        </section>
+
+        <section class="mb-5">
+            <h2>Pourquoi nous choisir ?</h2>
+            <ul class="list-unstyled">
+                <li>• Livraison rapide et sécurisée</li>
+                <li>• Garantie 2 ans sur tous nos produits</li>
+                <li>• Service client disponible 7j/7</li>
+                <li>• Offres exclusives et promotions régulières</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Rejoignez notre communauté</h2>
+            <p>
+                Abonnez-vous à notre newsletter et suivez-nous sur les réseaux sociaux pour recevoir des conseils
+                d’utilisation, des tutoriels et participer à nos concours. Chez La Boot'Ique, nous construisons
+                bien plus qu’une boutique : nous créons un espace d’échange et de passion autour de la technologie.
+            </p>
+        </section>
+    </div>
+{% endblock %}
