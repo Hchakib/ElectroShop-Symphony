@@ -1,6 +1,5 @@
 # Projet Final — ElectroShop 
 
-#Par : -Chakib / Benabb / Ariss
    
 **Technologies** : PHP 8+, Symfony 6, Doctrine ORM, EasyAdminBundle, Bootstrap 5, PayPal Checkout SDK, Symfony Mailer
 
